@@ -1,0 +1,16 @@
+{
+  "name": "nodejs_basic",
+  "version": "1.0.0",
+  "description": "Here we Learn The NodeJs",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Abhishek Santra",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
