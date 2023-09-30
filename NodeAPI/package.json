@@ -4,6 +4,9 @@
   "description": "Here we create some API",
   "main": "server.js",
   "type": "module",
+  "engines": {
+    "node": ">=14.20.1"
+  },
   "scripts": {
     "start": "set NODE_ENV=Production&& node server.js",
     "dev": "set NODE_ENV=Devolpoment&& nodemon server.js"
