@@ -7,7 +7,7 @@ export const isAuthenticated = async (req, res, next) => {
   if (!token) {
     return res.status(404).json({
       success: false,
-      message: "Logedin First",
+      message: "Logged in First",
     });
   }
   const decoded = jwt.verify(token, process.env.JWT_SECRET);
