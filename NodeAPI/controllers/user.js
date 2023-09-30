@@ -1,6 +1,5 @@
 import { User } from "../models/user.js";
 import bcrypt, { compare } from "bcrypt";
-import jwt from "jsonwebtoken";
 import { sendCookie } from "../utils/feature.js";
 import ErrorHandler from "../middlewares/error.js";
 
@@ -38,7 +37,7 @@ export const login = async (req, res, next) => {
 
     if (!isMatch) return next(new ErrorHandler("Invalid  Password ", 400));
 
-    sendCookie(user, res, 200, `Welcome back, ${user.name}`);
+    sendCookie(user, res, 200, `Welcome Back, ${user.name}`);
   } catch (error) {
     next(error);
   }
@@ -66,6 +65,7 @@ export const logout = async (req, res) => {
       })
       .json({
         success: true,
+        message: "Logged out successfully",
         user: req.user,
       });
   } catch (error) {
