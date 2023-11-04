@@ -4,3 +4,14 @@ export const myProfile = async (req, res, next) => {
     user: req.user,
   });
 };
+
+export const logout = (req, res, next) => {
+  req.session.destroy((err) => {
+    if (err) return next(err);
+
+    res.clearCookie("connect.sid");
+    res.status(200).json({
+      message: "Logged out",
+    });
+  });
+};
